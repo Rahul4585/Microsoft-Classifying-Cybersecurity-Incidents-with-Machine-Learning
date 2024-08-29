@@ -250,7 +250,7 @@ The solution developed in this project can be applied to various business scenar
 | [__2. Random Forest Classifier__](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | 0.860 | 0.830 | 0.890 |
 | [__3. Gradient Boosting Machines__](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html) | 0.855 | 0.825 | 0.880 | 
 
-* The Random Forest Classifier shows the best overall performance with the highest Macro-F1 Score, indicating superior classification capability.
+The Random Forest Classifier shows the best overall performance with the highest Macro-F1 Score, indicating superior classification capability.
 
 ---
 
