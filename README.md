@@ -191,18 +191,31 @@ The solution developed in our project can be applied to various business scenari
 
 ## 4. Model Selection and Training
 
-### a. Advanced Models
+### a. Baseline Models
+- **Objective**: Established a performance benchmark using a simple model to gauge the complexity required for the final model.
+ 
+   - **i) Logistic Regression**: Chosen for its simplicity and effectiveness in binary classification tasks. It provides a good starting point to understand the relationship between the features and the target variable.
+
+<p align="center">
+  <img width="700" alt="image" src="https://github.com/user-attachments/assets/2788ab95-703c-4ec4-84aa-58a46cfd1474">
+<p align="center">
+
+   - **ii) Decision Tree**: Selected as an alternative baseline model, offering interpretability and the ability to capture non-linear relationships in the data.
+
+<p align="center">
+  <img width="700" alt="image" src="https://github.com/user-attachments/assets/9f581f26-995b-4e57-86bc-c8268ab64fc3">
+<p align="center">
+
+### b. Advanced Models
 - **Objective**: Explored more sophisticated models to improve performance.
 
-   - **Random Forests**:
-     
-     - **Description**: Random Forests is an ensemble learning method that constructs a multitude of decision trees during training. The final prediction is made by averaging the predictions of individual trees (for regression) or by majority voting (for classification).
+   - **i) Random Forests**: An ensemble learning method that constructs a multitude of decision trees during training. The final prediction is made by averaging the predictions of individual trees (for regression) or by majority voting (for classification).
            
 <p align="center">
   <img width="700" alt="Image" src="https://github.com/user-attachments/assets/946bd8b2-87e1-46a1-ad79-1046cc151c8b">
 </p>
 
-   - **Gradient Boosting Machines (e.g., XGBoost, LightGBM)**:
+   - **ii) Gradient Boosting Machines (e.g., XGBoost, LightGBM)**:
      
      - **Description**: Gradient Boosting Machines (GBMs) are boosting algorithms that build models sequentially. Each new model attempts to correct errors made by the previous ones, resulting in a strong predictive model. XGBoost (Extreme Gradient Boosting) and LightGBM (Light Gradient Boosting Machine) are popular implementations that improve upon traditional boosting methods with enhanced speed and accuracy.
        
@@ -271,11 +284,14 @@ ii) __Feature Importances (XGBoost Classifier)__
 
 |  **Model**  | **Accuracy** |  **Macro-F1 Score**  | **Macro-Precision** | **Macro-Recall** |
 |:-----------:|:------------:|:-------------------:|:-------------------:|:----------------:|
-| [**1. Random Forest Classifier**](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | 0.498 | 0.347 | 0.679| 0.411 |
-| [**2. Tuned XGBoost Classifier**](https://xgboost.readthedocs.io/en/stable/) | 0.621 | 0.571 | 0.694 | 0.563 |
+| [**1. Random Forest Classifier**](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | 0.498 | 0.347 | 0.679 | 0.411 |
+| [**2. XGBoost Classifier**](https://xgboost.readthedocs.io/en/stable/) | 0.621 | 0.571 | 0.694 | 0.563 |
+| [**3. Logistic Regression**](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) | 0.433 | 0.239 | 0.272 | 0.352 |
+| [**4. Decision Tree Classifier**](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) | __0.807__ | __0.790__ | __0.796__ | __0.786__|
 
 
-The XGBoost Classifier performs better across all metrics compared to the Random Forest Classifier. It has higher accuracy, Macro-F1 Score, Macro-Precision, and Macro-Recall, making it the superior model based on the provided data.
+
+**Decision Tree Classifier** performs better across all metrics compared to the other Classifiers. It has higher accuracy, Macro-F1 Score, Macro-Precision, and Macro-Recall, making it the superior model based on the provided data.
 
 ---
 
@@ -307,9 +323,9 @@ The XGBoost Classifier performs better across all metrics compared to the Random
 
 ## 🏆 Results
 
-By the conclusion of this project, the following outcomes are expected:
+By the conclusion of this project, the following outcomes are incorprated:
 
-- **Accurate Machine Learning Model**: Develop a machine learning model that reliably predicts the triage grade of cybersecurity incidents (True Positive, Benign Positive, False Positive) with high performance metrics, including macro-F1 score, precision, and recall. The **XGBoost Classifier** is anticipated to achieve the best results.
+- **Accurate Machine Learning Model**: Developed a machine learning model that reliably predicted the triage grade of cybersecurity incidents (True Positive, Benign Positive, False Positive) with high performance metrics, including macro-F1 score, precision, and recall. The **Decision Tree Classifier** is anticipated to achieve the best results.
 
 - **Comprehensive Performance Analysis**: Provided a detailed analysis of the model's performance, including insights into the most influential features in the prediction process. This will involve evaluating feature importance, understanding the impact of various features on the model’s predictions, and identifying areas for potential improvement.
 
