@@ -209,15 +209,13 @@ The solution developed in our project can be applied to various business scenari
 ### b. Advanced Models
 - **Objective**: Explored more sophisticated models to improve performance.
 
-   - **i) Random Forests**: An ensemble learning method that constructs a multitude of decision trees during training. The final prediction is made by averaging the predictions of individual trees (for regression) or by majority voting (for classification).
-           
-<p align="center">
-  <img width="700" alt="Image" src="https://github.com/user-attachments/assets/946bd8b2-87e1-46a1-ad79-1046cc151c8b">
-</p>
-
-   - **ii) Gradient Boosting Machines (e.g., XGBoost, LightGBM)**:
-     
-     - **Description**: Gradient Boosting Machines (GBMs) are boosting algorithms that build models sequentially. Each new model attempts to correct errors made by the previous ones, resulting in a strong predictive model. XGBoost (Extreme Gradient Boosting) and LightGBM (Light Gradient Boosting Machine) are popular implementations that improve upon traditional boosting methods with enhanced speed and accuracy.
+    - **i) Random Forests**: An ensemble learning method that constructs a multitude of decision trees during training. The final prediction is made by averaging the predictions of individual trees (for regression) or by majority voting (for classification).
+    
+      <p align="center">
+        <img width="700" alt="Image" src="https://github.com/user-attachments/assets/946bd8b2-87e1-46a1-ad79-1046cc151c8b">
+      </p>
+        
+    - **ii) Gradient Boosting Machines (e.g., XGBoost, LightGBM)**: A boosting algorithm that builds models sequentially. Each new model attempts to correct errors made by the previous ones, resulting in a strong predictive model. XGBoost (Extreme Gradient Boosting) and LightGBM (Light Gradient Boosting Machine) are popular implementations that improve upon traditional boosting methods with enhanced speed and accuracy.
        
 <p align="center">
   <img width="700" alt="Image" src="https://github.com/user-attachments/assets/b629c2be-b9dd-4d77-b156-ea84652c2366">
@@ -249,6 +247,7 @@ The solution developed in our project can be applied to various business scenari
 
   - Adjusted hyperparameters like learning rates, regularization terms, tree depths, or number of estimators.
   - Used grid search method to find the best parameter combination.
+  - The hyperparameter-tuned model exhibits minor improvements across all evaluation metrics, showing that tuning the parameters yielded a slightly enhanced model.
 
 ## 6. Model Interpretation
 
@@ -282,16 +281,25 @@ ii) __Feature Importances (XGBoost Classifier)__
 
 ## 🔍 Model Comparison
 
-|  **Model**  | **Accuracy** |  **Macro-F1 Score**  | **Macro-Precision** | **Macro-Recall** |
-|:-----------:|:------------:|:-------------------:|:-------------------:|:----------------:|
-| [**1. Random Forest Classifier**](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | 0.498 | 0.347 | 0.679 | 0.411 |
-| [**2. XGBoost Classifier**](https://xgboost.readthedocs.io/en/stable/) | 0.621 | 0.571 | 0.694 | 0.563 |
-| [**3. Logistic Regression**](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) | 0.433 | 0.239 | 0.272 | 0.352 |
-| [**4. Decision Tree Classifier**](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) | __0.807__ | __0.790__ | __0.796__ | __0.786__|
+| **Model**                                                                                                                | **Accuracy** | **Macro-F1 Score** | **Macro-Precision** | **Macro-Recall** |
+|:-------------------------------------------------------------------------------------------------------------------------:|:------------:|:------------------:|:-------------------:|:----------------:|
+| [**1. Random Forest Classifier**](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | 0.498        | 0.347              | 0.679               | 0.411            |
+| [**2. XGBoost Classifier**](https://xgboost.readthedocs.io/en/stable/)                                                    | 0.621        | 0.571              | 0.694               | 0.563            |
+| [**3. Logistic Regression**](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) | 0.433        | 0.239              | 0.272               | 0.352            |
+| [**4. Decision Tree Classifier (Before Hyperparameter Tuning)**](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) | 0.807        | 0.790              | 0.797               | 0.786            |
+| [**5. Decision Tree Classifier (After Hyperparameter Tuning)**](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)  | __0.808__    | __0.791__          | __0.798__           | __0.787__        |
 
 
 
-**Decision Tree Classifier** performs better across all metrics compared to the other Classifiers. It has higher accuracy, Macro-F1 Score, Macro-Precision, and Macro-Recall, making it the superior model based on the provided data.
+
+Here, the **hyperparameter-tuned Decision Tree model** shows a slight improvement across all metrics compared to the model before tuning:
+
+- **Accuracy** increased from 0.807 to 0.808.
+- **Macro-Precision** improved from 0.796 to 0.798.
+- **Macro-Recall** increased from 0.786 to 0.787.
+- **Macro-F1 Score** improved from 0.790 to 0.791.
+
+Given these results, the hyperparameter-tuned model provids the best accuracy and overall performance.
 
 ---
 
@@ -325,7 +333,7 @@ ii) __Feature Importances (XGBoost Classifier)__
 
 By the conclusion of this project, the following outcomes are incorprated:
 
-- **Accurate Machine Learning Model**: Developed a machine learning model that reliably predicted the triage grade of cybersecurity incidents (True Positive, Benign Positive, False Positive) with high performance metrics, including macro-F1 score, precision, and recall. The **Decision Tree Classifier** is anticipated to achieve the best results.
+- **Accurate Machine Learning Model**: Developed a machine learning model that reliably predicted the triage grade of cybersecurity incidents (True Positive, Benign Positive, False Positive) with high performance metrics, including macro-F1 score, precision, and recall. The **hyperparameter-tuned Decision Tree model** is anticipated to achieve the best results.
 
 - **Comprehensive Performance Analysis**: Provided a detailed analysis of the model's performance, including insights into the most influential features in the prediction process. This will involve evaluating feature importance, understanding the impact of various features on the model’s predictions, and identifying areas for potential improvement.
 
