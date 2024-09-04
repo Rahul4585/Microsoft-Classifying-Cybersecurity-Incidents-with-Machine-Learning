@@ -191,35 +191,39 @@ The solution developed in our project can be applied to various business scenari
 
 ## 4. Model Selection and Training
 
+The objective of this section is to build and evaluate different machine learning models for classifying cybersecurity incidents. We start by establishing baseline models to provide a benchmark, followed by the implementation of advanced models for improved performance. Each model's performance is evaluated using key metrics such as accuracy, macro-F1 score, precision, and recall. Visualizations such as confusion matrices are also used to analyze model predictions.
+
 ### a. Baseline Models
-- **Objective**: Established a performance benchmark using a simple model to gauge the complexity required for the final model.
- 
-    - **i) Logistic Regression**: Chosen for its simplicity and effectiveness in binary classification tasks. It provides a good starting point to understand the relationship between the features and the target variable.
+- **Objective**: To establish an initial performance benchmark using simple models that offer interpretability and allow us to assess the complexity needed for the final model. Although baseline models are typically used as reference points, in this project, the **Decision Tree Classifier** not only served as a benchmark but also demonstrated superior performance compared to more advanced methods.
+
+    - **i) Logistic Regression**: Selected for its simplicity and effectiveness in binary classification tasks. Although limited in capturing non-linear relationships, it provides an excellent starting point for understanding the data and identifying core patterns. It serves as a reference for more complex models.
 
       <p align="center">
         <img width="700" alt="image" src="https://github.com/user-attachments/assets/2788ab95-703c-4ec4-84aa-58a46cfd1474">
       </p>
 
-    - **ii) Decision Tree**: Selected as an alternative baseline model, offering interpretability and the ability to capture non-linear relationships in the data.
-      
+    - **ii) Decision Tree**: Chosen for its ability to handle non-linear relationships and provide interpretable results. As a tree-based model, it can model complex decision rules while remaining transparent, making it ideal for understanding feature importance in classification tasks. It sets the stage for ensemble methods like Random Forest.
+
       <p align="center">
         <img width="700" alt="image" src="https://github.com/user-attachments/assets/9f581f26-995b-4e57-86bc-c8268ab64fc3">
       <p align="center">
 
 ### b. Advanced Models
-- **Objective**: Explored more sophisticated models to improve performance.
+- **Objective**: To explore and apply ensemble methods and gradient boosting algorithms with the aim of capturing more complex patterns, improving predictive accuracy, and reducing overfitting. While these models are designed to build upon the insights from the baseline models and generally offer more robust solutions for incident classification, in this project, their performance did not exceed that of the **Decision Tree** baseline model.
 
-    - **i) Random Forests**: An ensemble learning method that constructs a multitude of decision trees during training. The final prediction is made by averaging the predictions of individual trees (for regression) or by majority voting (for classification).
-    
+    - **i) Random Forests**: Random Forests were selected as a natural progression from Decision Trees. This ensemble method constructs multiple decision trees during training, and the final prediction is made by averaging the predictions (regression) or by majority voting (classification). Random Forests are powerful in reducing variance and improving generalization, making them well-suited for complex datasets. However, after evaluation, Random Forest did not outperform the tuned Decision Tree model in this context.
+
       <p align="center">
         <img width="700" alt="Image" src="https://github.com/user-attachments/assets/946bd8b2-87e1-46a1-ad79-1046cc151c8b">
       </p>
-        
-    - **ii) Gradient Boosting Machines (e.g., XGBoost, LightGBM)**: A boosting algorithm that builds models sequentially. Each new model attempts to correct errors made by the previous ones, resulting in a strong predictive model. XGBoost (Extreme Gradient Boosting) and LightGBM (Light Gradient Boosting Machine) are popular implementations that improve upon traditional boosting methods with enhanced speed and accuracy.
-       
-<p align="center">
-  <img width="700" alt="Image" src="https://github.com/user-attachments/assets/b629c2be-b9dd-4d77-b156-ea84652c2366">
-</p>
+
+    - **ii) Gradient Boosting Machines (e.g., XGBoost, LightGBM)**: These boosting algorithms sequentially build models, where each model corrects the errors of the previous ones. XGBoost and LightGBM improve on traditional boosting methods with faster training times and better accuracy. They are particularly effective in handling imbalanced data and capturing intricate data patterns. Although these models showed improvement in performance, they were not able to surpass the Decision Tree after hyperparameter tuning in terms of accuracy.
+
+      <p align="center">
+        <img width="700" alt="Image" src="https://github.com/user-attachments/assets/b629c2be-b9dd-4d77-b156-ea84652c2366">
+      </p>
+
+The comparison of these models, along with their respective confusion matrices, allowed us to identify the Decision Tree Classifier (after hyperparameter tuning) as the most accurate model for classifying cybersecurity incidents, achieving the highest accuracy, macro-F1 score, precision, and recall across all models.
 
 ### c. Cross-Validation
 - **Objective**: To validate model performance across different data subsets.
@@ -251,11 +255,10 @@ The solution developed in our project can be applied to various business scenari
 
 ## 6. Model Interpretation
 
-### a. Feature Importance
-- **Objective**: Understanding the contribution of each feature to the model's predictions.
+**Feature Importance**: Understanding the contribution of each feature to the model's predictions.
 
   - Analyzed the feature importance using:
-    - **Model-Specific Methods**: We have used feature importance scores provided by models like Random Forest.
+    - **Model-Specific Methods**: We have used feature importance scores provided by models like Random Forest and XGBoost.
    
 i) __Feature Importances (Random Forest Classifier)__
 
@@ -271,8 +274,7 @@ ii) __Feature Importances (XGBoost Classifier)__
 
 ## 7. Final Evaluation on Test Set
 
-### a. Testing
-- **Objective**: Evaluated the finalized model on unseen data.
+**Testing**: Evaluated the finalized model on unseen data.
 
   - Tested the model using the `test.csv` dataset.
   - Reported final performance metrics: accuracy,macro-F1 score, precision,recall , confusion matrix.
