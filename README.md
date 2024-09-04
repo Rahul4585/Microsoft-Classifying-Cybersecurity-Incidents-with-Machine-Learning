@@ -331,10 +331,8 @@ Given these results, the hyperparameter-tuned model provids the best accuracy an
 
 ## 🏆 Results
 
-By the conclusion of this project, the following outcomes are incorprated:
+The **Decision Tree Classifier**, after **Hyperparameter tuning**, emerged as the top-performing model with an accuracy of **80.8%**, and strong macro-F1 score, macro-precision and macro-recall scores. This optimized model effectively classifies cybersecurity incidents into True Positive, Benign Positive, and False Positive categories, outperforming other models like Random Forest and XGBoost. 
 
-- **Accurate Machine Learning Model**: Developed a machine learning model that reliably predicted the triage grade of cybersecurity incidents (True Positive, Benign Positive, False Positive) with high performance metrics, including macro-F1 score, precision, and recall. The **hyperparameter-tuned Decision Tree model** is anticipated to achieve the best results.
-
-- **Comprehensive Performance Analysis**: Provided a detailed analysis of the model's performance, including insights into the most influential features in the prediction process. This will involve evaluating feature importance, understanding the impact of various features on the model’s predictions, and identifying areas for potential improvement.
+Feature importance analysis also provided crucial insights into the most influential factors driving these predictions, aiding in the identification of key variables that contribute to accurate triage classification. This project demonstrates the potential of machine learning to enhance cybersecurity incident management, ensuring faster and more accurate decision-making.
 
 ---
