@@ -194,17 +194,17 @@ The solution developed in our project can be applied to various business scenari
 ### a. Baseline Models
 - **Objective**: Established a performance benchmark using a simple model to gauge the complexity required for the final model.
  
-   - **i) Logistic Regression**: Chosen for its simplicity and effectiveness in binary classification tasks. It provides a good starting point to understand the relationship between the features and the target variable.
+    - **i) Logistic Regression**: Chosen for its simplicity and effectiveness in binary classification tasks. It provides a good starting point to understand the relationship between the features and the target variable.
 
-<p align="center">
-  <img width="700" alt="image" src="https://github.com/user-attachments/assets/2788ab95-703c-4ec4-84aa-58a46cfd1474">
-<p align="center">
+      <p align="center">
+        <img width="700" alt="image" src="https://github.com/user-attachments/assets/2788ab95-703c-4ec4-84aa-58a46cfd1474">
+      </p>
 
-   - **ii) Decision Tree**: Selected as an alternative baseline model, offering interpretability and the ability to capture non-linear relationships in the data.
-
-<p align="center">
-  <img width="700" alt="image" src="https://github.com/user-attachments/assets/9f581f26-995b-4e57-86bc-c8268ab64fc3">
-<p align="center">
+    - **ii) Decision Tree**: Selected as an alternative baseline model, offering interpretability and the ability to capture non-linear relationships in the data.
+      
+      <p align="center">
+        <img width="700" alt="image" src="https://github.com/user-attachments/assets/9f581f26-995b-4e57-86bc-c8268ab64fc3">
+      <p align="center">
 
 ### b. Advanced Models
 - **Objective**: Explored more sophisticated models to improve performance.
